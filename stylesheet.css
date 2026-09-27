@@ -1094,40 +1094,40 @@ audio {
 	display: none;
 	margin-top: 50px;
 }
-#b1,#b11 {
+#b1,#b1_end {
 	background-image: url('b1.png');
 }
-#b2,#b22 {
+#b2,#b2_end {
 	background-image: url('b2.png');
 }
-#b3,#b33 {
+#b3,#b3_end {
 	background-image: url('b3.png');
 }
-#b4,#b44{
+#b4,#b4_end {
 	background-image: url('b4.png');
 }
-#b5,#b55{
+#b5,#b5_end {
 	background-image: url('b5.png');
 }
-#b6,#b66{
+#b6,#b6_end {
 	background-image: url('b6.png');
 }
-#b7,#b77{
+#b7,#b7_end {
 	background-image: url('b7.png');
 }
-#b8,#b88{
+#b8,#b8_end {
 	background-image: url('b1.png');
 }
-#b9,#b99{
+#b9,#b9_end {
 	background-image: url('b2.png');
 }
-#b10,#b1010{
+#b10,#b10_end {
 	background-image: url('b3.png');
 }
-#b11,#b1111{
+#b11,#b11_end {
 	background-image: url('b4.png');
 }
-#b12,#b1212{
+#b12,#b12_end {
 	background-image: url('b5.png');
 }
 .balloons-rotate-behaviour-one {

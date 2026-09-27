@@ -6,12 +6,12 @@ $('document').ready(function(){
 		var vw;
 		$(window).resize(function(){
 			 vw = $(window).width()/2;
-			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b10,#b11,#b12').stop();
+			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b10,#b11,#b12,#b1_end,#b2_end,#b3_end,#b4_end,#b5_end,#b6_end,#b7_end,#b8_end,#b9_end,#b10_end,#b11_end,#b12_end').stop();
 			var totalBalloons = 12;
-			var spacing = 60; // spacing between balloon centers
-			var startX = vw - ((totalBalloons - 1) * spacing / 2);
+			var spacing = Math.min(65, ($(window).width() - 40) / totalBalloons);
+			var startX = vw - (((totalBalloons - 1) * spacing + 100) / 2);
 			for(var k = 1; k <= totalBalloons; k++){
-				$('#b' + k + k).animate({top:240, left: startX + (k - 1) * spacing}, 500);
+				$('#b' + k + '_end').animate({top:240, left: startX + (k - 1) * spacing}, 500);
 			}
 		});
 
@@ -91,16 +91,22 @@ $('document').ready(function(){
 		vw = $(window).width()/2;
 
 		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b10,#b11,#b12').stop();
+		
+		// Collect elements first before renaming to avoid ID collisions
+		var balloonElements = [];
 		for(var i = 1; i <= 12; i++){
-			$('#b' + i).attr('id', 'b' + i + i);
+			balloonElements.push($('#b' + i));
+		}
+		for(var i = 0; i < 12; i++){
+			balloonElements[i].attr('id', 'b' + (i + 1) + '_end');
 		}
 
 		var totalBalloons = 12;
-		var spacing = Math.min(60, ($(window).width() - 80) / totalBalloons); // adjust spacing responsively
-		var startX = vw - ((totalBalloons - 1) * spacing / 2) - 50; // offset balloon center width
+		var spacing = Math.min(65, ($(window).width() - 40) / totalBalloons);
+		var startX = vw - (((totalBalloons - 1) * spacing + 100) / 2);
 
 		for(var j = 1; j <= totalBalloons; j++){
-			$('#b' + j + j).animate({top:240, left: startX + (j - 1) * spacing}, 500);
+			$('#b' + j + '_end').animate({top:240, left: startX + (j - 1) * spacing}, 500);
 		}
 
 		$('.balloons').css('opacity','0.9');
